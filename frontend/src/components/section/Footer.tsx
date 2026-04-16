@@ -12,9 +12,15 @@ export default function Footer() {
                     </div>
                     
                     <div className="flex gap-6 justify-center">
-                         <FaGithub className="w-8 h-8 hover:text-gray-400 hover:scale-120"/>
-                         <FaLinkedin className="w-8 h-8 hover:text-gray-400 hover:scale-120"/>
-                         <FaSquareXTwitter className="w-8 h-8 hover:text-gray-400 hover:scale-120"/>
+                         <a href="https://github.com/ShubhanshuOO7" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 hover:scale-120 transition-transform duration-200">
+                             <FaGithub className="w-8 h-8"/>
+                         </a>
+                         <a href="https://www.linkedin.com/in/shubh9999/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 hover:scale-120 transition-transform duration-200">
+                             <FaLinkedin className="w-8 h-8"/>
+                         </a>
+                         <a href="https://x.com/Shubhanshu69973" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 hover:scale-120 transition-transform duration-200">
+                             <FaSquareXTwitter className="w-8 h-8"/>
+                         </a>
                     </div>
                 </div>
                 
