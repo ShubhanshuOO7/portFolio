@@ -1,11 +1,13 @@
 import { useState } from "react";
+import axios from "axios"
 import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-
+import { HTTP_ROUTE } from "../../../config";
+import { toast } from "sonner";
 export default function ContactMe() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        message: ""
+        desc: ""
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -15,12 +17,18 @@ export default function ContactMe() {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Form submitted:", formData);
-        // Here you would typically send the data to a backend service
-        alert("Thank you for your message! I'll get back to you soon.");
-        setFormData({ name: "", email: "", message: "" });
+    const handleSubmit = async(e: React.FormEvent) => {
+        try {
+            e.preventDefault();
+            const res = await axios.post(`${HTTP_ROUTE}/api/v1/user/sendMail`,formData)
+            if(res.data){
+                toast.success(res.data.message)
+                setFormData({ name: "", email: "", desc: "" });
+            }
+            // Here you would typically send the data to a backend service
+        } catch (error:any) {
+            toast.error(error?.response?.data.message || "Something went wrong")
+        }
     };
 
     return (
@@ -91,13 +99,13 @@ export default function ContactMe() {
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                                <label htmlFor="Desc" className="block text-sm font-medium mb-2">
                                     Message
                                 </label>
                                 <textarea
-                                    id="message"
-                                    name="message"
-                                    value={formData.message}
+                                    id="desc"
+                                    name="desc"
+                                    value={formData.desc}
                                     onChange={handleChange}
                                     required
                                     rows={5}

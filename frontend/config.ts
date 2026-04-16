@@ -1,0 +1,1 @@
+export const HTTP_ROUTE = import.meta.env.VITE_HTTP_BACKEND
