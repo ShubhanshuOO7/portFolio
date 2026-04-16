@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios"
 import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-import { HTTP_ROUTE } from "../../../config";
+import { HTTP_ROUTE } from "../../config";
 import { toast } from "sonner";
 export default function ContactMe() {
     const [formData, setFormData] = useState({
