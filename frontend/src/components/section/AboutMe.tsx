@@ -3,8 +3,28 @@ export default function AboutMe() {
 
     return (
 
-        <div className="py-20 px-6 bg-black">
-            <motion.div  animate={{x:0}} initial={{x:"-100vw"}} transition={{duration:1.6}} className="max-w-4xl mx-auto">
+        <div className="py-20 px-6 bg-black relative">
+            
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-transparent to-pink-900/10">
+                <motion.div
+                    animate={{
+                        background: [
+                            "linear-gradient(45deg, rgba(139, 92, 246, 0.1) 0%, transparent 50%, rgba(236, 72, 153, 0.1) 100%)",
+                            "linear-gradient(90deg, rgba(139, 92, 246, 0.1) 0%, transparent 50%, rgba(236, 72, 153, 0.1) 100%)",
+                            "linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 50%, rgba(236, 72, 153, 0.1) 100%)",
+                            "linear-gradient(45deg, rgba(139, 92, 246, 0.1) 0%, transparent 50%, rgba(236, 72, 153, 0.1) 100%)"
+                        ]
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="absolute inset-0"
+                />
+            </div>
+            
+            <motion.div  animate={{x:0}} initial={{x:"-100vw"}} transition={{duration:1.6}} className="max-w-4xl mx-auto relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text text-transparent mb-4">
                         About Me
@@ -45,6 +65,38 @@ export default function AboutMe() {
                                 <span className="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm font-medium border border-gray-700">
                                     DSA & Algorithms
                                 </span>
+                            </div>
+                        </div>
+                        <div className="pt-8 border-t border-gray-700">
+                            <h3 className="text-2xl font-bold text-white mb-6 text-center">Experience</h3>
+                            <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                    <div>
+                                        <h4 className="text-xl font-semibold text-purple-400">Full Stack Developer Intern</h4>
+                                        <p className="text-lg text-gray-300">Dehix</p>
+                                    </div>
+                                    <div className="text-right mt-2 md:mt-0">
+                                        <p className="text-sm font-medium text-pink-400">Aug 2025 - Nov 2025</p>
+                                    </div>
+                                </div>
+                                <ul className="space-y-3 text-gray-300">
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Developed full-stack features using Next.js, Fastify, and MongoDB following scalable backend architecture practices.</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Implemented authentication workflows using Firebase with secure session handling.</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Optimized REST API endpoints and database queries, improving backend performance and response times.</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Deployed applications on AWS EC2 and S3, maintaining reliable cloud infrastructure.</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

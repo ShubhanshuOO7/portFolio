@@ -18,14 +18,14 @@ const Header = () => {
      className="sticky top-0 z-50 w-full border-b border-gray-700/30 bg-black/80 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo/Brand */}
+          
           <div className="flex items-center">
             <motion.h1 animate={{y:0}} initial={{y:"-100vh"}} transition={{duration:1}} className="text-2xl font-bold bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text text-transparent">
               Portfolio
             </motion.h1>
           </div>
 
-          {/* Desktop Navigation */}
+         
           <nav className="hidden md:flex items-center space-x-8">
             <motion.a animate={{y:0}} initial={{y:"-100vh"}} transition={{duration:1.2}}
               onClick={(e) => { e.preventDefault(); smoothScroll('projects'); }}
@@ -53,7 +53,7 @@ const Header = () => {
             </motion.a>
           </nav>
 
-          {/* CTA Button */}
+          
           <div className="hidden md:flex items-center">
             <motion.button  animate={{y:0}} initial={{y:"-100vh"}} transition={{duration:1.8}} onClick={() => smoothScroll('contact')} className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
               <span className="relative z-10 flex items-center gap-2">
@@ -63,7 +63,7 @@ const Header = () => {
             </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
+          
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -76,7 +76,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-700/30">
             <nav className="flex flex-col space-y-4">

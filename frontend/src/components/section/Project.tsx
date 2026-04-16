@@ -2,12 +2,25 @@ import React from 'react'
 import { Button } from '../ui/button'
 import { ArrowUpRight } from 'lucide-react'
 import GridBackgroundDemo from '../ui/grid-background-demo'
+import { motion } from 'framer-motion'
 
 const Project = () => {
   return (
-    <div className="py-20 px-6 bg-black">
+    <motion.div 
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-6 bg-black"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text text-transparent mb-4">
             Featured Projects
           </h2>
@@ -16,15 +29,41 @@ const Project = () => {
             <span className="text-sm text-gray-400 font-medium">My Work</span>
             <span className="h-px w-20 bg-gradient-to-l from-pink-400 to-transparent"></span>
           </div>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mt-4 leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg text-gray-300 max-w-3xl mx-auto mt-4 leading-relaxed"
+          >
             A curated collection of my work showcasing full-stack development, 
             modern web technologies, and creative problem-solving
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <div className="group relative">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+        >
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0, y: 50, scale: 0.9 },
+              visible: { opacity: 1, y: 0, scale: 1 }
+            }}
+            transition={{ duration: 0.5 }}
+            className="group relative"
+          >
             <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-800 hover:border-purple-700/50 transition-all duration-300 hover:transform hover:scale-105">
               <div className="mb-4">
                 <div className="w-full h-48 bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-xl flex items-center justify-center overflow-hidden">
@@ -51,10 +90,16 @@ const Project = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          
-          <div className="group relative">
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0, y: 50, scale: 0.9 },
+              visible: { opacity: 1, y: 0, scale: 1 }
+            }}
+            transition={{ duration: 0.5 }}
+            className="group relative"
+          >
             <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-800 hover:border-violet-700/50 transition-all duration-300 hover:transform hover:scale-105">
               <div className="mb-4">
                 <div className="w-full h-48 bg-gradient-to-br from-violet-900/20 to-purple-900/20 rounded-xl flex items-center justify-center overflow-hidden">
@@ -82,10 +127,16 @@ const Project = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          
-          <div className="group relative">
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0, y: 50, scale: 0.9 },
+              visible: { opacity: 1, y: 0, scale: 1 }
+            }}
+            transition={{ duration: 0.5 }}
+            className="group relative"
+          >
             <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-800 hover:border-pink-700/50 transition-all duration-300 hover:transform hover:scale-105">
               <div className="mb-4">
                 <div className="w-full h-48 bg-gradient-to-br from-pink-900/20 to-violet-900/20 rounded-xl flex items-center justify-center overflow-hidden">
@@ -112,11 +163,11 @@ const Project = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
           
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
