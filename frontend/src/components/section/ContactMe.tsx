@@ -52,7 +52,7 @@ export default function ContactMe() {
                         <div className="space-y-4">
                             <div className="flex items-center gap-4">
                                 <FaEnvelope className="text-purple-400 text-xl" />
-                                <span>shubhanshu5320413@example.com</span>
+                                <span>shubhanshu5320413@gmail.com</span>
                             </div>
                             <div className="flex items-center gap-4">
                                 <FaPhone className="text-purple-400 text-xl" />
