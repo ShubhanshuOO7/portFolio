@@ -24,7 +24,6 @@ const Project = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          {/* Project 1 */}
           <div className="group relative">
             <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-800 hover:border-purple-700/50 transition-all duration-300 hover:transform hover:scale-105">
               <div className="mb-4">
@@ -54,7 +53,7 @@ const Project = () => {
             </div>
           </div>
 
-          {/* Project 2 */}
+          
           <div className="group relative">
             <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-800 hover:border-violet-700/50 transition-all duration-300 hover:transform hover:scale-105">
               <div className="mb-4">
@@ -85,7 +84,7 @@ const Project = () => {
             </div>
           </div>
 
-          {/* Project 3 */}
+          
           <div className="group relative">
             <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-800 hover:border-pink-700/50 transition-all duration-300 hover:transform hover:scale-105">
               <div className="mb-4">

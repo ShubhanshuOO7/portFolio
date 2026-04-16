@@ -44,10 +44,16 @@ function App() {
                 </motion.div>
               </div>
             </div>
-            <AboutMe />
+            <div id="about">
+              <AboutMe />
+            </div>
             <Skills/>
-            <Project/>
-            <ContactMe/>
+            <div id="projects">
+              <Project/>
+            </div>
+            <div id="contact">
+              <ContactMe/>
+            </div>
             <Footer/>
     </div>
   )
